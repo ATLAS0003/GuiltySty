@@ -17,3 +17,14 @@
 \vskip\belowcaptionskip}
 \makeatother%% プリアンブルで定義する場合は必須
 \newcommand{\bhline}[1]{\noalign{\hrule height #1}}
+%画像挿入を一行で書くために
+%\Ggraphics[倍率など大きさ]{ファイル名}{注釈}{ラベル}
+\newcommand{\Ggraphics}[4][0.75]{
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=#1]{#2}
+		\caption{#3}
+		\label{#4}
+	\end{center}
+\end{figure}
+}
