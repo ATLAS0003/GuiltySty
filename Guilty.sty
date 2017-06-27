@@ -1,0 +1,19 @@
+\ProvidesPackage{Guilty}
+\makeatletter%% プリアンブルで定義する場合は必須
+\long\def\@makecaption#1#2{% \@makecaption を再定義します
+\vskip\abovecaptionskip
+\iftdir\sbox\@tempboxa{#1\hskip1zw#2}%
+\else\sbox\@tempboxa{#1~ #2}% ここの : を ~ に変更する
+\fi
+\ifdim \wd\@tempboxa >\hsize% 
+\iftdir #1\hskip1zw#2\relax\par
+\else #1~ #2\relax\par\fi% ここの : を ~ に変更する
+\else
+\global \@minipagefalse
+\hbox to\hsize{\hfil\box\@tempboxa\hfil}% センタリング
+% \hbox to\hsize{\box\@tempboxa\hfil}% 左詰め
+% \hbox to\hsize{\hfil\box\@tempboxa}% 右詰め
+\fi
+\vskip\belowcaptionskip}
+\makeatother%% プリアンブルで定義する場合は必須
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}
