@@ -1,0 +1,159 @@
+\documentclass[dvipdfmx]{beamer}
+\usetheme[left]{Marburg}
+
+\usepackage{ulem}
+\usepackage{Guilty}
+\usepackage{url}
+\usepackage{textcomp}
+\ifnum 42146=\euc"A4A2 \AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}\fi
+
+\title[TUAT TECH TALK]{\LaTeX{} on 化学科}
+\subtitle{.styファイルとbeamerのお誘い}
+\author{ATLAS\_00005}
+\institute{東京農工大}
+\subject{TUAT TECH TALK}
+
+\begin{document}
+\frame{\titlepage}
+\begin{frame}
+	\tableofcontents
+\end{frame}
+
+\section{自己紹介}
+	\begin{frame}{自己紹介}
+		東京農工大 \alert{有機材料化学科} B3 \\
+		Twitter ID :ATLAS\_0005 \\
+		カメラ好きです （Canon派） {\color{gray}←こっちのほうが面白い}\\
+		\Ggraphics[0.25]{ATLAS0005.png}{アイコン}{ATLAS} 
+	\end{frame}
+\section{Wordの悪行とLaTeX}
+\begin{frame}
+		Q:なんでおまえがLaTeXを?\\ \pause
+		A:\alert{\huge{Wordがクソ}}
+\end{frame}
+\begin{frame}
+	\begin{itemize}
+		\frametitle{Wordの嫌いなところ}
+		\item 固有名詞に赤線
+		\item 小文字から大文字に自動的に変換
+		\item 図を挟むとずれる
+		\item \alert{イルカ} 
+		\item \Ggraphics[0.5]{Kyle.png}{{\alert カイル君}}{Report}
+	\end{itemize}
+\end{frame}
+\section{\LaTeX{}とは}
+	\begin{frame}{\LaTeX{}とは}
+	``LaTeX は TeX の上に構築されたフリーの文書処理システムです。 Leslie Lamport によって開発されました。 TeX は「組版のために開発された言語」でもあり，そのままでは使いにくい点もあるので，LaTeX では一般的な文書作成に便利な機能拡張がなされています。'' ―TeXWiki
+	\end{frame}
+
+	\begin{frame}
+		\huge{よくわからない}
+	\end{frame}
+
+	\begin{frame}
+		\huge{わからなくても書ける}
+	\end{frame}
+\section{化学科 on LaTeX}
+	\begin{frame}
+		書けた
+	\end{frame}
+	\begin{frame}
+		\Ggraphics[0.5]{hoge.png}{レポートの様子}{Report}
+	\end{frame}
+	\begin{frame}
+		\Ggraphics[0.5]{TeX.png}{レポートの様子}{Report}
+	\end{frame}
+	\begin{frame}
+		きつい…
+	\end{frame}
+\section{Guilty.sty}
+	\begin{frame}
+		書きにくかったので\pause\\
+		styファイルを作りました
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Guilty.sty}
+		自作したスタイルファイル\\
+		\url{https://github.com/ATLAS0003/GuiltySty}にあります\\
+		現在の機能
+		\begin{itemize}
+		\item 太い表罫線
+		\item 図の挿入
+		\item 図番号の太字
+		\end{itemize}
+		{\color{green}ネタ・修正お願いします!}
+	\end{frame}
+\section{beamerへのお誘い}
+	\begin{frame}
+		パワポもクソだな\pause \\
+		- beamerを使おう
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{beamerとは}
+		TeX記法を用いてスライドの作れるスタイルファイル!\\
+		\pause でも(日本語 AND ちゃんとした)のマニュアルがない…
+	\end{frame}
+\section{beamerの簡単でおおざっぱなチュートリアル}
+		\begin{frame}{チュートリアル1}
+			\begin{enumerate}
+				\item コードをtexファイルに書く\\ \pause
+				\item {\huge タイプセット!できた!}	
+			\end{enumerate}　\pause \\
+		簡単でしょ?
+		\end{frame}
+		\begin{frame}{チュートリアル2}
+			\begin{itemize}
+				\item スライド1枚の間は\textbackslash begin\{frame\}～\textbackslash end\{frame\}内に記述する
+				\item 後はTeXで使う記法で書ける
+			\end{itemize}
+		\end{frame}
+
+		\begin{frame}{チュートリアル3 \textbackslash pauseについて}
+			このコマンドを用いることで段階的に文字を見せたりすることができる!\\
+			例えば \pause こんな　\pause 感じ \pause に!
+		\end{frame}
+		\begin{frame}{チュートリアル4 Overlay Specification について}
+			複雑な　\textbackslash pause \\
+			\textlangle n - m \textrangle で出てくる順番を指定する\\
+			\begin{itemize}
+			\item<2->あ
+			\item<3->い
+			\item<2->う
+			\item<4->え
+			\item<3->お
+			\end{itemize}
+		\end{frame}
+		\begin{frame}{その他の機能}
+		\uncover{
+			\begin{itemize}
+				\item <2->Block…四角く囲む
+				\item <3->Theme
+				\item <4->その他のOverlay Specification
+					\begin{itemize}
+						\item <5->\textbackslash onslide
+						\item <5->\textbackslash only
+						\item <5->\textbackslash uncover
+					\end{itemize}
+				\item<6-> \alert{その先は自分の目で確かめよう!}
+			\end{itemize}
+			}
+		\end{frame}
+\begin{frame}
+	\huge これだけ!
+\end{frame}
+\section{まとめ}
+		\begin{frame}
+			\frametitle{まとめ}			
+			\LaTeX{}もそれはそれで使いにくい　\\
+			見やすいWord VS 自由に書けるTeX\\
+			{\color{gray} \small イルカは邪魔}\\
+			{\huge 目的にあった\\ソフト選びを!}
+		\end{frame}
+		\begin{frame}
+			\frametitle{まとめ}			
+			{\huge このスライドもbeamerで製作していました!}
+		\end{frame}
+\end{document}
